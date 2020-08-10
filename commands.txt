@@ -1,0 +1,5 @@
+ffmpeg.exe -c:v h264_cuvid -i video1.mp4 video1\frame%05d.png
+
+ffmpeg.exe -c:v h264_cuvid -i video.mp4 -vf scale=320:-1 frames\frame%05d.png
+
+ffmpeg.exe -c:v vp9_cuvid -i video3.webm -vf scale=1920:-1 video3\frame%05d.png
