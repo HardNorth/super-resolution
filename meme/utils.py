@@ -1,4 +1,6 @@
 import os
+from random import Random
+
 import tensorflow as tf
 from typing import Tuple, List
 
@@ -78,3 +80,13 @@ def read_images(image_files: List[str], image_type: str) -> tf.data.Dataset:
     else:
         raise ValueError()
     return ds
+
+
+def list_dir_full_path(directory: str) -> List[str]:
+    return [os.path.join(directory, f) for f in os.listdir(directory)]
+
+
+def shuffle(random: Random, shuffle_list: List):
+    result = list(shuffle_list)
+    random.shuffle(result)
+    return result
